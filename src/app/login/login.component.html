@@ -1,0 +1,80 @@
+<div class="container login-container">
+    <div class="row">
+        <div class="col-md-6 login-form-1">
+          
+   
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets\images\one.png" alt="Chania" width="460" height="345">
+                <div class="carousel-caption">
+                  <h3>Learner Engagement</h3>
+                  <span>Interactive features mirror the traditional classroom experience and learners receive feedback to increase long-term retention, tripling learning efficacy over standard video.</span>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets\images\second.png" alt="Chania" width="460" height="345">
+                <div class="carousel-caption">
+                  <h3>Accountable Training</h3>
+                  <span>Receive immediate, accessible data (both performance and behavior-based) to effectively remediate concepts, automatically assign grades, and address deficiencies.</span>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets\images\three.png" alt="Chania" width="460" height="345">
+        <div class="carousel-caption">
+          <h3>Seamless Workflow</h3>
+          <span>Sync rosters, create and assign impactful video experiences, enrich your flipped classroom, and streamline tedious grading.</span>
+        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 login-form-2" *ngIf="logOrReg==='welcome';else login">
+            <h3>Welcome</h3>
+            <button type="button" class="btn btn-danger btn-sm" (click)="LoginOrReg('login')" style="width: 300px;">login</button><br>
+            <span>or</span><br>
+            <button type="button" class="btn btn-outline-danger btn-sm" (click)="LoginOrReg('register')"  style="width: 300px;">Register</button>
+        </div>
+        <ng-template #login>
+          <div class="col-md-6 login-form-2" *ngIf="logOrReg==='login';else register">
+            <h3>login</h3>
+
+        </div>
+        <ng-template #register>
+         
+          <div class="col-md-6 login-form-2" *ngIf="registerContinue==='register';else continue" >
+            <h3>register</h3>
+            <div class="input-group mb-3">
+              
+              <input type="text" class="form-control" placeholder="Enter your phone number" aria-label="Username" aria-describedby="basic-addon1"><br>
+             
+            </div>
+            <button type="submit"  class="btn btn-danger btn-sm" style="width: 300px;" (click)="RegContinue('continue')">continue</button>
+            <button (click)="LoginOrReg('login')">login</button>
+        </div>
+        <ng-template #continue>
+          <div class="col-md-6 login-form-2" *ngIf="toPersonalDetails==='continue';else personalDetails" >
+          <h3>
+            verify account
+          </h3>
+          <button (click)="personalDetail('personal')">verify</button>
+          </div>
+          <ng-template #personalDetails>
+            <div class="col-md-6 login-form-2"  >
+              <h3>
+                personal details
+              </h3>
+              <button>verify</button>
+              </div>
+          </ng-template>
+        </ng-template>
+        </ng-template>
+        </ng-template>
+        
+    </div>
+
+</div>
+
+
+
+
