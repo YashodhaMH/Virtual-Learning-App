@@ -1,75 +1,335 @@
-.login-container{
-    margin-top: 5%;
-    margin-bottom: 5%;
+@mixin important-text {
+  font-style: normal;
+  font-weight: 700;
+  font-family: 'Proxima Nova Soft';
+  line-height: 26px;
+  /* or 130% */
+  
+  text-align: center;
+  
+  color: #FFFFFF;
+  
+  
 }
-.login-form-1{
+
+
+.img-slideshow {
+  object-fit: cover;
+  width: 200px;
+  height: 180px;
+}
+
+.login-container {
+  margin-top: 5%;
+  margin-bottom: 9%;
  
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
-.login-form-1 h3{
-    text-align: center;
-    color: #333;
-}
-.login-form-2{
-    padding: 5%;
-    background: #0062cc;
-    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-.login-form-2 h3{
-    text-align: center;
-    color: #fff;
-}
-.login-container form{
-    padding: 10%;
-}
-.btnSubmit
-{
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    border: none;
-    cursor: pointer;
-}
-.login-form-1 .btnSubmit{
-    font-weight: 600;
-    color: #fff;
-    background-color: #0062cc;
-}
-.login-form-2 .btnSubmit{
-    font-weight: 600;
-    color: #0062cc;
-    background-color: #fff;
-}
-.login-form-2 .ForgetPwd{
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
-}
-.login-form-1 .ForgetPwd{
-    color: #0062cc;
-    font-weight: 600;
-    text-decoration: none;
-}
-#carouselExampleIndicators{
-     background-color:black;
-   height: 100%;
-}
-span{
-    
-    font-family: 'Proxima Nova Soft';
-font-style: normal;
-font-weight: 700;
-font-size: 20px;
-line-height: 28px;
-/* or 140% */
 
+.login-form-1 h3 {
+  text-align: center;
+  color: #333;
+}
+.login-form-2 {
+ padding-top: 2%;
+  background: rgba(9, 41, 99, 1);
+  height: 500px;
+  // box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+ 
+}
+git add .
+git commit -m "second commit"
+git push -u origin main
+// form{}
+.login-form-2 h3 {
+  
+ @include important-text;
+ font-size: 28px;
+line-height: 35px;
 text-align: center;
-
-color: #7A7A7A;
 }
+// .login-container form {
+//   padding: 10%;
+// }
+.btnSubmit {
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+.login-form-1 .btnSubmit {
+  font-weight: 600;
+  color: #fff;
+  background-color: #0062cc;
+}
+.login-form-2 .btnSubmit {
+  font-weight: 600;
+  color: #0062cc;
+  background-color: #fff;
+}
+.login-form-2 .ForgetPwd {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-form-1 .ForgetPwd {
+  color: #0062cc;
+  font-weight: 600;
+  text-decoration: none;
+}
+// #carouselExampleIndicators {
+//   background-color: black;
+//   height: 100%;
+// }
+#carouselExampleIndicators{
+
+  position: relative;
+}
+#carouselExampleIndicators .carousel-indicators {
+  position: absolute;
+ bottom:-90px;  
+}
+#carouselExampleIndicators .carousel-indicators button{
+  border-radius: 100%;
+  width: 0.4rem;
+  height: 0.4rem;
+
+  border-radius: 50%;
+  border: 0;
+  background: transparent;
+  background-color: #EE5C4D;
+  
+}
+#carouselExampleIndicators .carousel-indicators button.active
+{
+ 
+  width: 36px;
+  border-radius: 4px;
+}
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-    width: 100%;
-    margin: auto;
+  width: 100%;
+  margin: auto;
 }
-.container {width: 980px !important;}
+.container {
+  width: 980px !important;
+}
+form{
+  padding-left: 9%;
+  padding-right: 9%;
+}
+.btn-login {
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(238, 92, 77, 1);
+  padding-left: 30%;
+  padding-right: 30%;
+
+}
+
+.btn-register {
+  font-weight: bold;
+  color: rgba(238, 92, 77, 1);
+  background-color: transparent;
+  border: 3px solid rgba(238, 92, 77, 1);
+  padding-left: 27%;
+   padding-right: 27%;
+}
+.register-txt{
+  @include important-text;
+  
+  display: inline-block;
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  opacity: 0.6;
+
+}
+
+.policy-text {
+  @include important-text;
+ 
+  font-size: 10x;
+
+  /* or 130% */
+ 
+
+  display: inline-block;
+ 
+ 
+
+
+  // max-width: 348px;
+  // padding-left: 34px;
+}
+
+.register-number {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid grey;
+
+}
+.input-group{
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.font-p {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+ 
+  margin-top: 2%;
+
+}
+
+.facebook-google {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.facebook-google button {
+  justify-content: space-around;
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  width: 130px;
+  text-align: center;
+}
+
+
+
+// .login-form-2 form {
+//   position: relative;
+//   width: 300px;
+//   padding: 30px;
+// }
+focus {
+  outline: none;
+}
+
+
+.input-grp {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 8%;
+  padding-right: 8%;
+
+}
+
+.input-field {
+  @include important-text;
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  // border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+  mix-blend-mode: normal;
+}
+
+.noCode,
+.Resend {
+  @include important-text;
+  font-size: 15px;
+ 
+  /* identical to box height, or 130% */
+
+ 
+  
+}
+.Resend {
+  color: #ee5c4d;
+}
+.verify-btn {
+  width: 330px;
+  background: #ee5c4d;
+  border-radius: 6px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-description {
+  @include important-text;
+  display: inline-block;
+  width: 450px;
+
+
+  font-size: 17px;
+  line-height: 28px;
+  color: #7a7a7a;
+}
+.form-label{
+    
+  color: transparent;
+  
+}
+
+
+
+.form-control{
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 0px;
+  border-color: #ccc;
+  border-style: none none solid none;
+  width: 100%;
+  transition: all .5s;
+  padding:0px;
+  color: white;
+  
+}
+
+.form-control::placeholder{
+  color:white;
+
+}
+.form-control:focus{
+  box-shadow: none;
+  outline: none;
+  border-color: #EE5C4D;
+}
+.form-control:focus::placeholder{
+  color: transparent;
+}
+
+.form-control:focus + .form-label{
+  font-size: 1em;
+  color: #aaa;
+  display: block;
+  opacity: 1;
+  transform: translateY(-1.25em);
+  transform-origin: 0 0;
+  transition: all .3s;
+}
+
+.form-control:focus + .form-label,
+.form-control:not(:placeholder-shown)+ .form-label{//ajason property
+  // transform: translateY(-2.5em) scale(.8);
+  transform: translateY(-2.9em);
+  color: #aaa;
+}
+
+.form-group:focus-within{
+  transform: scale(1.05,1.05);
+}
+// .ng-valid[required], .ng-valid.required  {
+//   border-left: 5px solid #42A948; /* green */
+//   background-color: white;
+// }
+.errorMsg{
+  background-color: #FFFFFF;
+  width:200px;
+}

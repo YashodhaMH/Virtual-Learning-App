@@ -1,80 +1,277 @@
-<div class="container login-container">
-    <div class="row">
-        <div class="col-md-6 login-form-1">
-          
-   
-          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="assets\images\one.png" alt="Chania" width="460" height="345">
-                <div class="carousel-caption">
-                  <h3>Learner Engagement</h3>
-                  <span>Interactive features mirror the traditional classroom experience and learners receive feedback to increase long-term retention, tripling learning efficacy over standard video.</span>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="assets\images\second.png" alt="Chania" width="460" height="345">
-                <div class="carousel-caption">
-                  <h3>Accountable Training</h3>
-                  <span>Receive immediate, accessible data (both performance and behavior-based) to effectively remediate concepts, automatically assign grades, and address deficiencies.</span>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="assets\images\three.png" alt="Chania" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Seamless Workflow</h3>
-          <span>Sync rosters, create and assign impactful video experiences, enrich your flipped classroom, and streamline tedious grading.</span>
+<div class="container login-container ">
+  <div class=" row ">
+    <div class="col-md-8 login-form-1 " >
+
+      <div id="carouselExampleIndicators" class="carousel slide text-center" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-              </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="img-slideshow" src="assets\images\one.png" alt="Chania">
+         
+            <h4>Learner Engagement</h4>
+           
+              <span class="carousel-description ">Interactive features mirror the traditional classroom experience and learners
+                receive feedback to increase long-term retention, tripling learning efficacy over standard video.</span>
+         
+           
+        
+          </div>
+          <div class="carousel-item" >
+            <img class="img-slideshow" src="assets\images\second.png" alt="Chania">
+          
+            <h4>Accountable Training</h4>
+         
+            <span class="carousel-description ">Receive immediate, accessible data (both performance and behavior-based) to
+              effectively remediate concepts, automatically assign grades, and address deficiencies.</span>
             </div>
+       
+          <div class="carousel-item">
+            <img class="img-slideshow" src="assets\images\three.png" alt="Chania">
+           
+            <h3>Seamless Workflow</h3>
+            
+            <span  class="carousel-description ">Sync rosters, create and assign impactful video experiences, enrich your
+              flipped classroom, and streamline tedious grading.</span>
+             
+       
           </div>
         </div>
-        <div class="col-md-6 login-form-2" *ngIf="logOrReg==='welcome';else login">
-            <h3>Welcome</h3>
-            <button type="button" class="btn btn-danger btn-sm" (click)="LoginOrReg('login')" style="width: 300px;">login</button><br>
-            <span>or</span><br>
-            <button type="button" class="btn btn-outline-danger btn-sm" (click)="LoginOrReg('register')"  style="width: 300px;">Register</button>
-        </div>
-        <ng-template #login>
-          <div class="col-md-6 login-form-2" *ngIf="logOrReg==='login';else register">
-            <h3>login</h3>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+
+
+    <div class="col-md-4 login-form-2 text-center" *ngIf="logOrReg==='welcome';else login">
+      <img src="assets\images\logo.png">
+      <p style="color:white;font-size: 20px;font-weight: bold;">Welcome</p>
+      <p style="color:gray">Are you ready to study easily in a virtual way?</p>
+      <button type="button" class="btn-login btn-sm " (click)="LoginOrReg('login')"
+ >Login</button><br>
+      <br>
+      <p style="color:white;font-size: 16px;font-weight: bold;">Or</p>
+      <button type="button" class="btn-register btn-sm " (click)="LoginOrReg('register')"
+       >Register</button>
+      <br><br>
+      <span class="policy-text ">By creating new account, you agree to our <a href="#">Terms of Services</a> & <a href="#">Privacy Policy</a></span>
+     
+    
+    </div>
+
+
+    <ng-template #login>
+
+      <div class="col-md-4 login-form-2 text-center" *ngIf="logOrReg==='login';else register">
+        <div [ngSwitch]="swapVariableData">
+          <div *ngSwitchCase="'forgotpassword'">
+
+            <h3>Change Password</h3>
+            <input type="text" class="form-control" placeholder="phonenumber" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-danger btn-sm" (click)="LoginOrReg('login')"
+              style="width: 300px;">save</button><br>
+
+
+          </div>
+          <div *ngSwitchCase="'continue'">
+            <h3>continue</h3>
+          </div>
+          <div *ngSwitchDefault>
+            <h3>Welcome Back</h3>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+              aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="phonenumber" aria-label="Username"
+              aria-describedby="basic-addon1">
+
+            <button type="button" class="btn btn-outline-danger btn-sm" style="width: 200px;">continue</button>
+
+            <p class="font-p">dont have a account?<a style="color: orange;" href="#"
+                (click)="LoginOrReg('register')">Register</a></p>
+            <a (click)="toChangePassword('forgotpassword')" style="color: orange;" href="#">forgot password?</a>
+          </div>
 
         </div>
-        <ng-template #register>
-         
-          <div class="col-md-6 login-form-2" *ngIf="registerContinue==='register';else continue" >
-            <h3>register</h3>
-            <div class="input-group mb-3">
-              
-              <input type="text" class="form-control" placeholder="Enter your phone number" aria-label="Username" aria-describedby="basic-addon1"><br>
-             
-            </div>
-            <button type="submit"  class="btn btn-danger btn-sm" style="width: 300px;" (click)="RegContinue('continue')">continue</button>
-            <button (click)="LoginOrReg('login')">login</button>
+
+      </div>
+
+      <ng-template #register>
+
+        <div class="col-md-4 login-form-2 text-center" *ngIf="registerContinue==='register';else continue">
+          <img src="assets\images\logo.png">
+          <h3>New Account</h3>
+          <br>
+          <span style="font-size: 14px;" class="register-txt">Create a new account to get access to all courses by entering your mobile
+            number.</span>
+            <br><br>
+          <div class="input-group mb-3">
+
+            <input type="text" class="form-control register-number" placeholder="Enter your mobile number"
+            [(ngModel)]="phoneNumber"  ><br>
+
+          </div>
+          <br>
+          <button type="submit" class="btn-login btn-sm" style="padding-left: 27%; padding-right: 27%;"
+            (click)="RegContinue('continue')">Continue</button>
+            <br>
+          <p class="font-p">Already have an account?<a href="#" style="color:rgba(238, 92, 77, 1)"
+              (click)="LoginOrReg('login')">login</a></p>
+              <br><br>
+          <div class="facebook-google">
+            
+            <button><i class="fa-brands fa-facebook-f">f</i></button>
+            <button>G</button>
+          </div>
+
         </div>
         <ng-template #continue>
-          <div class="col-md-6 login-form-2" *ngIf="toPersonalDetails==='continue';else personalDetails" >
-          <h3>
-            verify account
-          </h3>
-          <button (click)="personalDetail('personal')">verify</button>
+          <div class="col-md-4 login-form-2 text-center" *ngIf="toPersonalDetails==='continue';else personalDetails" >
+            <img src="assets\images\logo.png">
+            <h3>
+              Verify Account
+            </h3>
+            <br>
+            <p  class="register-txt" style="font-size:15px;">Please fill in the verification code that has been sent to your mobile number.</p>
+            <div class="input-grp">
+              <input type="text" name="vcode"  maxlength="1" #txt1 class="input-field" (keyup)="move($event, '', txt1,txt2)">
+              <input type="text" name="vcode"  maxlength="1" #txt2 class="input-field" (keyup)="move($event, txt1, txt2,txt3)">
+              <input type="text" name="vcode" maxlength="1" #txt3 class="input-field" (keyup)="move($event, txt2, txt3,txt4)">
+              <input type="text" name="vcode" maxlength="1" #txt4 class="input-field" (keyup)="move($event, txt3, txt4,'')">
+            </div>
+           <br>
+           <p class="noCode">Didn’t recieve a code? <span class="Resend">Resend</span> </p>
+
+
+
+            <button class="btn-login btn-sm"    (click)="personalDetail('personal')">Verify</button>
           </div>
           <ng-template #personalDetails>
-            <div class="col-md-6 login-form-2"  >
+            <div class="col-md-4 login-form-2">
               <h3>
                 personal details
               </h3>
-              <button>verify</button>
+              <p  class="register-txt" style="font-size:15px;">Please fill out the fields below so we can learn some information about you.</p>
+              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+              <!-- <p>
+                <label for="email">Email </label>
+                <input type="text" id="email" name="email" formControlName="email">
+              </p>
+              <div *ngIf="!email.valid && (email.dirty ||email.touched)">
+                <div [hidden]="!email.errors.required">
+                  email is required
+                </div>
+                <div [hidden]="!email.errors.email">
+                  invalid email id
+                </div>
+              </div> -->
+            
+                <input type="text" id="Mobile Number" name="Mobile Number" class="form-control register-number" placeholder="Mobile Number"  formControlName="mobileNumber">
+                <label for="Mobile Number" class="form-label">Mobile Number </label>
+            
+              
+                <input type="text" id="fullname" name="fullname" class="form-control register-number" placeholder="Full Name"  formControlName="fullname">
+                <label for="fullname" class="form-label">Full Name </label>
+               
+                <input type="text" id="username" name="Username" class="form-control register-number" placeholder=" Username" formControlName="username">
+                <label for="Username" class="form-label">Username</label>
+          
+                <div *ngIf=" submitted&&f['username'].errors" >
+             
+                  <div *ngIf="f['username'].errors?.['required']" style="background-color: blue;">Username is required</div>
+                
+                  <div *ngIf="f['username'].errors?.['maxlength']">
+                    Username must not exceed 20 characters
+                  </div>
+                </div>
+             
+               <!--   {{contactForm.get('username').errors.required}}
+                {{contactForm.get('username').errors.pattern}}
+               <div *ngIf=" contactForm.get('username').dirty "> 
+               
+                  <div [hidden]="!contactForm.get('username').errors.pattern">
+                    Only characters are allowed
+                  </div>
+                  <div [hidden]="!contactForm.get('username').errors.required">
+                    Last Name is required
+                  </div>
+                   </div> -->
+              
+             
+            
+                <input type="text" id="email" name="email"class="form-control register-number" placeholder="Email Id" formControlName="email">
+                <label for="email" class="form-label">Email ID</label>
+                <div *ngIf="!f['email'].valid && (f['email'].dirty ||f['email'].touched)">
+                  <div [hidden]="!f['email'].errors?.['required']" class="errorMsg">
+                    email is required
+                  </div>
+                  <div [hidden]="!f['email'].errors?.['email']" class="errorMsg">
+                    invalid email id
+                  </div>
+                </div> 
+               
+                <input type="password" id="password" name="password" class="form-control register-number"  placeholder="Password"formControlName="password">
+                <label for="password" class="form-label">Password </label>
+                <!-- {{contactForm.get('password').errors.required}}
+                <div *ngIf="contactForm.get('password').dirty ||contactForm.get('password').touched">
+                  <div [hidden]="!contactForm.get('password').errors.required" class="errorMsg">
+                    Password is required
+                  </div>
+                  <div [hidden]="!contactForm.get('password').errors.pattern" class="errorMsg">
+                    Password must be at least 6 characters
+                  </div>
+              
+              </div> -->
+              <div  *ngIf="(f['password'].touched||submitted)&&f['password'].errors?.['required']">
+                Password is required
+              </div> 
+
+              <div class="errorMsg" *ngIf="f['password'].errors?.['pattern']">
+
+                <h5>minimum requirement</h5>
+                At least 6 characters long with one number, one uppercase letter, and one lowercase letter.
               </div>
+           
+               
+                <input type="password" id="Confirmpassword" name="Confirmpassword" placeholder="Confirm password"class=" form-control register-number" formControlName="confirmPassword">
+
+                <label for="Confirmpassword" class="form-label">Confirm Password </label>
+               
+                <div
+                *ngIf="(f['confirmPassword'].touched||submitted) && f['confirmPassword'].errors"
+               
+              >
+            
+                <div *ngIf="f['confirmPassword'].errors?.['required']">
+                  Confirm Password is required
+                </div>
+              
+                <div *ngIf="f['confirmPassword'].errors?.['matching']">
+                  Confirm Password does not match
+                </div>
+              </div>
+                <button type="submit" class="btn-login btn-sm" >verify</button>
+            </form>
+              
+            </div>
           </ng-template>
         </ng-template>
-        </ng-template>
-        </ng-template>
-        
-    </div>
+      </ng-template>
+    </ng-template>
+
+  </div>
+
+
 
 </div>
-
-
 
 
